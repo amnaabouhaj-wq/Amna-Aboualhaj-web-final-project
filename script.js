@@ -57,9 +57,20 @@ function prev(){
 
 let accordion = document.querySelectorAll('.faq .accordion-container .accordion');
 
-accordion.forEach(acco =>{
-   acco.onclick = () =>{
-      accordion.forEach(remove => remove.classList.remove('active'));
-      acco.classList.add('active');
+let accordions = document.querySelectorAll('.faq .accordion-container .accordion');
+
+accordions.forEach(acco => {
+   acco.onclick = () => {
+   
+      let isActive = acco.classList.contains('active');
+      
+
+      accordions.forEach(sub => sub.classList.remove('active'));
+      
+   
+      if(!isActive) {
+         acco.classList.add('active');
+      }
    }
 });
+
